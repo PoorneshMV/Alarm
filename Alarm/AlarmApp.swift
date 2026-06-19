@@ -1,17 +1,14 @@
-//
-//  AlarmApp.swift
-//  Alarm
-//
-//  Created by Ron Erez on 11/1/22.
-//
 
 import SwiftUI
 
 @main
 struct AlarmApp: App {
+    @StateObject var lnManager: LocalNotificationManager = LocalNotificationManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
+                .environmentObject(lnManager)
         }
     }
 }
